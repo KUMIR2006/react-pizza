@@ -8,6 +8,39 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 645px) {
+      p {
+        font-size: 13px;
+      }
+      .button {
+        min-width: 70px;
+        padding: 12px;
+        &__delimiter {
+          display: none;
+        }
+      }
+      a {
+        justify-content: center;
+      }
+      svg {
+        margin: 0;
+      }
+      span {
+        display: none;
+      }
+    }
+    // @media (max-width: 480px) {
+    //   h1 {
+    //     font-size: 18px;
+    //   }
+    //   p {
+    //     font-size: 10px;
+    //   }
+    //   .button {
+    //     min-width: 50px;
+    //   }
+    // }
   }
 
   &__logo {
