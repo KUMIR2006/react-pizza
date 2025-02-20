@@ -12,14 +12,15 @@ import NotFound from './pages/NotFound'
 import './scss/app.scss';
 
 function App() {
+  const [searchValue, setSearchValue] = React.useState('');
 
   return (
     <div>
       <div className="wrapper">
-        <Header />
+        <Header searchValue={searchValue} setSearchValue={setSearchValue}/>
         <div className="content">
             <Routes>
-              <Route path="/" exact element={<Home/> } />
+              <Route path="/" exact element={<Home searchValue={searchValue}/> } />
               <Route path="/cart" exact element={<Cart/> } />
               <Route path="*" exact element={<NotFound/>} />
             </Routes>
