@@ -6,8 +6,9 @@ import Sort from '../components/Sort';
 import PizzaBlock from '../components/PizzaBlock';
 import Skeleton from '../components/PizzaBlock/Skeleton';
 import Pagination from '../components/Pagination';
+import { SearchContext } from '../App';
 
-function Home({searchValue}) {
+function Home() {
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [categoryId, setCategoryId] = React.useState(0)
@@ -16,6 +17,7 @@ function Home({searchValue}) {
     name: "популярности ⬇", 
     sortProperty: "rating"
   });
+  const {searchValue} = React.useContext(SearchContext);
 
   const pizzas = items.map(obj => <PizzaBlock key={obj.id} {...obj}/>)
   const bones = [...new Array(6)].map((_, index) =><Skeleton key={index}/>)
