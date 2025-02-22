@@ -14,7 +14,7 @@ function Search() {
           viewBox="0 0 17 18">
             <title>search</title>
             <desc>Created with Sketch.</desc>
-            <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="Rounded" transform="translate(-545.000000, -421.000000)">
                     <g id="Action" transform="translate(100.000000, 100.000000)">
                         <g id="-Round-/-Action-/-search" transform="translate(442.000000, 318.000000)">
