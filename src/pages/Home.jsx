@@ -10,7 +10,7 @@ import Sort from '../components/Sort';
 import PizzaBlock from '../components/PizzaBlock';
 import {sortList} from '../components/Sort';
 
-import { fetchPizzas } from '../redux/slices/pizzasSlice';
+import { fetchPizzas, selectPizzaData, selectFilter } from '../redux/slices/pizzasSlice';
 import { setCategoryId, setCurrentPage, setFilters } from '../redux/slices/filterSlice';
 import { SearchContext } from '../App';
 
@@ -20,11 +20,9 @@ function Home() {
   const isSearch = React.useRef(false)
   const isMounted = React.useRef(false)
 
-  const {categoryId, sort, currentPage } = useSelector(state => state.filter)
+  const {categoryId, sort, currentPage, searchValue } = useSelector(selectFilter)
   const sortType = sort.sortProperty;
-  const { items, status } = useSelector(state => state.pizza)
-
-  const {searchValue} = React.useContext(SearchContext);
+  const { items, status } = useSelector(selectPizzaData)
 
   const pizzas = items.map(obj => <PizzaBlock key={obj.id} {...obj}/>)
   const bones = [...new Array(6)].map((_, index) =><Skeleton key={index}/>)
