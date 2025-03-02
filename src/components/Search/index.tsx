@@ -5,26 +5,27 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setSearchValue } from '../../redux/slices/filterSlice';
 import { selectFilter } from '../../redux/slices/pizzasSlice';
 
-function Search() {
+const Search: React.FC = () => {
   const dispatch = useDispatch()
   const { searchValue } = useSelector(selectFilter)
 
   const [value, setValue] = React.useState('');
-  const inputRef = React.useRef()
+  const inputRef = React.useRef<HTMLInputElement>(null)
  
   const onClickClear = () => {
     dispatch(setSearchValue(''));
-    inputRef.current.focus();
+    setValue('');
+    inputRef.current?.focus();
   }
 
   const updateSearchValue = React.useCallback(
-    debounce((str) => {
+    debounce((str: string) => {
       dispatch(setSearchValue(str));
     },250),
     [],
   );
 
-  const onChangeInput = (event) => {
+  const onChangeInput = (event: any) => {
     setValue(event.target.value);
     updateSearchValue(event.target.value);
   }
