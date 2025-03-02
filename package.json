@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "axios": "^1.7.9",
     "cra-template": "1.2.0",
     "lodash.debounce": "^4.0.8",
