@@ -1,14 +1,11 @@
 import React from 'react';
-import qs from 'qs'
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
 import Skeleton from '../components/PizzaBlock/Skeleton';
 import Pagination from '../components/Pagination';
 import Categories from '../components/Categories';
 import Sort from '../components/Sort';
 import PizzaBlock from '../components/PizzaBlock';
-import {sortList} from '../components/Sort';
 
 
 import { useAppDispatch } from '../redux/store';
@@ -18,11 +15,7 @@ import { fetchPizzas } from '../redux/pizza/asyncActions';
 
 
 const Home: React.FC = () => {
-  const navigate = useNavigate()
   const dispatch = useAppDispatch()
-  const isSearch = React.useRef(false)
-  const isMounted = React.useRef(false)
-
   const {categoryId, sort, currentPage, searchValue } = useSelector(selectFilter)
   const sortType = sort.sortProperty;
   const { items, status } = useSelector(selectPizzaData)
